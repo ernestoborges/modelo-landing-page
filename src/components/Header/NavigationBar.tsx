@@ -49,5 +49,5 @@ const NavList = styled.ul`
 `
 
 const NavItem = styled.li`
-    cursor: pointer;s
+    cursor: pointer;
 `
