@@ -3,10 +3,10 @@
   font-size: 10px;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
 
   --white: #FFFFFF;
   --black: #000000;
+  --dark-blue: #323540;
 
   color: var(--black);
   background-color: var(--white);
@@ -21,6 +21,7 @@
 }
 
 body {
+  font-size: 1.6rem;
   display: flex;
   justify-content: center;
   min-width: 320px;
@@ -30,8 +31,13 @@ body {
   width: 100%;
   min-height: 100vh;
   max-width: 1440px;
+
+  position: relative;
 }
 
+ul {
+  list-style: none;
+}
 
 h1 {
   
