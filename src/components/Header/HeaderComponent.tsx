@@ -19,6 +19,14 @@ export function HeaderContainer() {
 }
 
 const Header = styled.header`
+
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    min-height: 6rem;
     font-size: 1.6rem;
 
     display: flex;
@@ -26,7 +34,6 @@ const Header = styled.header`
     justify-content: space-between;
     padding: 0 1.5rem;
 
-    min-height: 6rem;
 `
 
 const Logo = styled.div`
