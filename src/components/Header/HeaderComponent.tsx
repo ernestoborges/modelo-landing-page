@@ -33,6 +33,8 @@ const Logo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    cursor: pointer;
 `
 
 const LogoText = styled.p`
