@@ -12,4 +12,5 @@ export function HomeSection(){
 
 const Container = styled.div`
     height: 100vh;
+    margin-top: 6rem;
 `

@@ -35,7 +35,11 @@ export function HamburgerMenu() {
                             <HListItem
                                 key={index}
                             >
-                                {item.name}
+                                <a
+                                    href={`#${item.link}`}
+                                >
+                                    {item.name}
+                                </a>
                             </HListItem>
                         )
                     }
@@ -46,9 +50,9 @@ export function HamburgerMenu() {
 }
 
 const Container = styled.section<HamburgerMenuProp>`
-  position: absolute;
+  position: fixed;
   z-index: 999;
-  top: 0;
+  top: -1px;
   right: -100%;
   width: 30rem;
   height: 100vh;
@@ -74,15 +78,17 @@ const HList = styled.ul`
   gap: 2rem;
 `
 const HListItem = styled.li`
-  font-size: 2.6rem;
-  font-weight: bold;
-  color: var(--white);
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: var(--white);
+    & > a {
+        all: unset;
+    }   
 `
 
 const HamburgerButton = styled.button<HamburgerMenuProp>`
-    position: absolute;
+    position: fixed;
     z-index: 1000;
-    position: absolute;
     top: 1rem;
     right: 1rem;
         

@@ -1,10 +1,10 @@
 import styled from "styled-components"
 import { NavigationBar } from "./NavigationBar"
 
-export function HeaderContainer() {
+export function HeaderContainer({className}: {className: string}) {
     return (
         <>
-            <Header>
+            <Header className={className}>
                 <Logo>
                     <img src="" alt="" />
                     <LogoText>
@@ -25,9 +25,10 @@ const Header = styled.header`
     top: 0;
     left: 0;
     width: 100%;
-
     min-height: 6rem;
     font-size: 1.6rem;
+
+    background-color: var(--white);     
 
     display: flex;
     align-items: center;

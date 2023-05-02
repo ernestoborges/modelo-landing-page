@@ -2,19 +2,24 @@ import styled from "styled-components"
 
 export const navigationListItems = [
     {
-        name: "Inicio"
+        name: "Inicio",
+        link: "home"
     },
     {
-        name: "Quem Somos"
+        name: "Quem Somos",
+        link: "about"
     },
     {
-        name: "Serviços"
+        name: "Serviços",
+        link: "services"
     },
     {
-        name: "Blog"
+        name: "Blog",
+        link: "blog"
     },
     {
-        name: "Contato"
+        name: "Contato",
+        link: "contact"
     },
 ]
 
@@ -28,13 +33,15 @@ export function NavigationBar() {
                             <NavItem
                                 key={index}
                             >
-                                {item.name}
+                                <a href={`#${item.link}`}>
+                                    {item.name}
+                                </a>
                             </NavItem>
                         )
                     }
                 </NavList>
             </NavBar>
-           
+
         </>
     )
 }
@@ -54,4 +61,8 @@ const NavList = styled.ul`
 
 const NavItem = styled.li`
     cursor: pointer;
+
+    & > a {
+        all: unset;
+    }
 `

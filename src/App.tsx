@@ -4,20 +4,17 @@ import { HomeSection } from "./components/Home/HomeSection";
 import { AboutSection } from "./components/About/AboutSection";
 import { HamburgerMenu } from "./components/HamburgerMenu/HamburgerMenu";
 
-
 function App() {
-
-
 
   return (
     <>
       <Container>
-        <HeaderContainer />
+        <HeaderContainer className="menu" />
         <HamburgerMenu />
-        <Section>
+        <Section id="home">
           <HomeSection />
         </Section>
-        <Section>
+        <Section id="about">
           <AboutSection />
         </Section>
       </Container>
@@ -28,12 +25,12 @@ function App() {
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  position: relative;
+  position: relative; 
+  
 `
 
 const Section = styled.section`
-  position: relative;
-  top: 6rem;
+  scroll-margin-top: 6rem;
 `
 
 export default App
