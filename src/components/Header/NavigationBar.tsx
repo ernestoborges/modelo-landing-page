@@ -15,7 +15,7 @@ export const navigationListItems = [
     },
     {
         name: "Blog",
-        link: "blog"
+        link: "news"
     },
     {
         name: "Contato",

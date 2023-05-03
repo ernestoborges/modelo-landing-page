@@ -1,9 +1,11 @@
 import styled from "styled-components"
 import { HeaderContainer } from "./components/Header/HeaderComponent"
-import { HomeSection } from "./components/Home/HomeSection";
-import { AboutSection } from "./components/About/AboutSection";
+import { HomeSection } from "./components/Sections/Home/HomeSection";
+import { AboutSection } from "./components/Sections/About/AboutSection";
 import { HamburgerMenu } from "./components/HamburgerMenu/HamburgerMenu";
-import { Products } from "./components/Products/Products";
+import { Products } from "./components/Sections/Products/Products";
+import { Contact } from "./components/Sections/Contact/Contact";
+import { News } from "./components/Sections/News/News";
 
 function App() {
 
@@ -20,6 +22,12 @@ function App() {
         </Section>
         <Section id="products">
           <Products />
+        </Section>
+        <Section id="news">
+          <News />
+        </Section>
+        <Section id="contact">
+          <Contact />
         </Section>
       </Container>
     </>

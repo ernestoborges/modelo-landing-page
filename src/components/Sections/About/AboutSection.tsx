@@ -110,9 +110,6 @@ const Section = styled.section`
         flex-direction: column;
         gap: 1rem;
     }
-
-    & > #detail-wrapper {
-    }
 `
 
 const Footer = styled.footer`
