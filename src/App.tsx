@@ -3,6 +3,7 @@ import { HeaderContainer } from "./components/Header/HeaderComponent"
 import { HomeSection } from "./components/Home/HomeSection";
 import { AboutSection } from "./components/About/AboutSection";
 import { HamburgerMenu } from "./components/HamburgerMenu/HamburgerMenu";
+import { Products } from "./components/Products/Products";
 
 function App() {
 
@@ -16,6 +17,9 @@ function App() {
         </Section>
         <Section id="about">
           <AboutSection />
+        </Section>
+        <Section id="products">
+          <Products />
         </Section>
       </Container>
     </>

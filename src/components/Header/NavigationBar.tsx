@@ -11,7 +11,7 @@ export const navigationListItems = [
     },
     {
         name: "Serviços",
-        link: "services"
+        link: "products"
     },
     {
         name: "Blog",

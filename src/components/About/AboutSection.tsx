@@ -67,7 +67,6 @@ export function AboutSection() {
 }
 
 const Container = styled.div`
-    height: 100vh;
     padding: 0 10rem;
 
     @media (max-width: 768px){

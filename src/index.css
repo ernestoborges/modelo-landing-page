@@ -6,6 +6,7 @@
 
   --white: #FFFFFF;
   --black: #000000;
+  --gray: #818181;
   --dark-blue: #323540;
 
   color: var(--black);
@@ -13,6 +14,7 @@
   
 
 }
+
 html {
   scroll-behavior: smooth;
 }
