@@ -81,7 +81,6 @@ const Carousel = styled(Slider)`
 `
 
 const CarouselItem = styled.div`
-    background-color: red;
 
     & > img {
         width: 100%;
