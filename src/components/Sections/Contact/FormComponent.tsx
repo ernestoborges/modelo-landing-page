@@ -61,18 +61,15 @@ export function FormComponent() {
                     initialValues={initialValues}
                     // innerRef={formikRef}
                     validate={handleValidate}
-                    onSubmit={(values, { setSubmitting }) => {
+                    onSubmit={(values) => {
                         alert(values)
                     }}
                 >
                     {({
                         values,
-                        errors,
-                        touched,
                         handleChange,
                         handleBlur,
-                        handleSubmit,
-                        isSubmitting,
+                        handleSubmit
                     }) => (
                         <>
 
