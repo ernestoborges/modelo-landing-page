@@ -127,7 +127,7 @@ const NewsItem = styled.li`
             flex-direction: column;
             gap: 0.4rem;
 
-            & > h4 {
+            & > header > h4 {
                 white-space: normal;
             }
         }

@@ -8,6 +8,7 @@
   --black: #000000;
   --gray: #818181;
   --dark-blue: #323540;
+  --red: #FF0000;
 
   color: var(--black);
   background-color: var(--white);
@@ -49,4 +50,7 @@ h1 {
   
 }
 
+button {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
 
