@@ -6,9 +6,9 @@ import "slick-carousel/slick/slick-theme.css";
 export function HomeSection() {
 
     const carouselItems = [
-        { img: "src/assets/images/2.jpg" },
-        { img: "src/assets/images/1.jpg" },
-        { img: "src/assets/images/3.jpg" },
+        { img: "images/2.jpg" },
+        { img: "images/1.jpg" },
+        { img: "images/3.jpg" },
     ]
 
     const settings = {
