@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components"
 
 export function AboutSection() {
 
     const [isDetailOn, setIsDetailOn] = useState(false);
+    const [detailHeight, setDetailHeight] = useState(50);
+
+    useEffect(() => {
+        const wrapper = document.getElementById("detail-wrapper")
+        if(wrapper){
+            setDetailHeight(wrapper.offsetHeight);
+        }
+    }, [isDetailOn]);
 
     return (
         <>
@@ -20,28 +28,37 @@ export function AboutSection() {
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tristique velit vitae volutpat. Maecenas vestibulum euismod erat sed euismod. Aliquam convallis molestie dictum. Phasellus ac felis vestibulum, eleifend nibh quis, convallis urna. Nullam malesuada malesuada purus nec semper. Sed eu nisl maximus, suscipit purus ac, imperdiet neque. Proin fringilla quis est eget rutrum. Mauris nisi lacus, imperdiet non condimentum accumsan, venenatis et arcu. Aliquam non dui nibh. Nulla leo risus, vulputate sit amet quam nec, blandit sodales leo.</p>
                         </div>
                     </MainSection>
-                    <Section style={{height: isDetailOn ? "271px" : "0px"}}>
-                        <div>
-                            <h3>Lorem</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tristique velit vitae volutpat. Maecenas vestibulum euismod erat sed euismod. Aliquam convallis molestie dictum. Phasellus ac felis vestibulum, eleifend nibh quis, convallis urna.
-                            </p>
-                        </div>
-                        <div>
-                            <h3>Ipsum</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tristique velit vitae volutpat. Maecenas vestibulum euismod erat sed euismod. Aliquam convallis molestie dictum. Phasellus ac felis vestibulum, eleifend nibh quis, convallis urna.
-                            </p>
-                        </div>
-                        <div>
-                            <h3>Dolor</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tristique velit vitae volutpat. Maecenas vestibulum euismod erat sed euismod. Aliquam convallis molestie dictum. Phasellus ac felis vestibulum, eleifend nibh quis, convallis urna.
-                            </p>
+                    <Section
+                        id="detail-section"
+                        style={{
+                            height: isDetailOn
+                                ? detailHeight+"px"
+                                : "0"
+                        }}
+                    >
+                        <div id="detail-wrapper" >
+                            <div>
+                                <h3>Lorem</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tristique velit vitae volutpat. Maecenas vestibulum euismod erat sed euismod. Aliquam convallis molestie dictum. Phasellus ac felis vestibulum, eleifend nibh quis, convallis urna.
+                                </p>
+                            </div>
+                            <div>
+                                <h3>Ipsum</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tristique velit vitae volutpat. Maecenas vestibulum euismod erat sed euismod. Aliquam convallis molestie dictum. Phasellus ac felis vestibulum, eleifend nibh quis, convallis urna.
+                                </p>
+                            </div>
+                            <div>
+                                <h3>Dolor</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tristique velit vitae volutpat. Maecenas vestibulum euismod erat sed euismod. Aliquam convallis molestie dictum. Phasellus ac felis vestibulum, eleifend nibh quis, convallis urna.
+                                </p>
+                            </div>
                         </div>
                     </Section>
                     <Footer>
-                        <button onClick={()=> setIsDetailOn(!isDetailOn)}>{`Mostrar ${isDetailOn ? "menos" : "mais"}`}</button>
+                        <button onClick={() => setIsDetailOn(!isDetailOn)}>{`Mostrar ${isDetailOn ? "menos" : "mais"}`}</button>
                     </Footer>
                 </article>
             </Container>
@@ -52,6 +69,14 @@ export function AboutSection() {
 const Container = styled.div`
     height: 100vh;
     padding: 0 10rem;
+
+    @media (max-width: 768px){
+        padding: 0 5rem;
+    }
+
+    @media (max-width: 400px){
+        padding: 0 1rem;
+    }
 `
 
 const Header = styled.header`
@@ -65,6 +90,10 @@ const MainSection = styled.section`
 
     & p {
         text-align: justify;
+    }
+
+    @media (max-width: 768px){
+        flex-direction: column;
     }
 `
 
@@ -81,6 +110,9 @@ const Section = styled.section`
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    & > #detail-wrapper {
     }
 `
 
