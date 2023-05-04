@@ -119,12 +119,13 @@ export function FormComponent() {
                                         placeholder="Telefone"
                                     />
                                 </FormField>
-                                <FormField>
+                                <FormField className="message-input" >
                                     <div>
-                                        <ErrorMessage name="name" component="span" />
+                                        <ErrorMessage name="message" component="span" />
                                     </div>
                                     <Field
                                         type="text"
+                                        as="textarea"
                                         name="message"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
@@ -169,20 +170,28 @@ const Header = styled.div`
 `
 
 const Form = styled.form`
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 6rem;
     column-gap: 1rem;
     row-gap: 1rem;
+
+    & > .message-input {
+        grid-row: auto / span 2
+
+    }
 
 `
 
 const FormField = styled.label`
-    grid-area: 1 span / 2 span ;
+    grid-column: 1 / 2 span ;
 
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    gap: 0.6rem;
     
     color: var(--white);
     
@@ -202,15 +211,35 @@ const FormField = styled.label`
         border: 0.1 solid var(--black);
         border-radius: 0.4rem;
     }
+
+    & > textarea {
+        width: 100% !important;
+        height: 100% !important;
+        padding: 1rem;
+        background-color: var(--white);
+        border: 0.1 solid var(--black);
+        border-radius: 0.4rem;
+        resize: none;
+    }
+
+
 `
 
 const Button = styled.button`
-    margin-top: 2rem;
+    border: 0.1rem solid var(--white);
+    background-color: var(--black);
+    color: var(--white);
+
     padding: 2rem;
-    background-color: var(--gray);
-    border: 0.1rem solid transparent;
     border-radius: 0.8rem;
-    color: var(--black);
     font-size: 1.6rem;
     font-weight: bold;
+    cursor:pointer;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+
+    &:hover {
+        border: 0.1rem solid var(--black);
+        background-color: var(--white);
+        color: var(--black);
+    }
 `

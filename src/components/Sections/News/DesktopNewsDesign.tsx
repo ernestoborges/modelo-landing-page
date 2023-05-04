@@ -84,7 +84,7 @@ const NewsCard = styled.article`
         position: absolute;
         top: 40%;
         right: 0;
-        z-index: 2;
+        z-index: 1;
         background-color: var(--white);
         border: 0.1rem solid var(--black);
 

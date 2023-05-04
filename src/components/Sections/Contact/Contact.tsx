@@ -66,11 +66,11 @@ const Container = styled.div`
     gap: 2rem;
 
     @media (max-width: 768px){
-        padding: 2rem 5rem;
+        padding: 5rem 5rem;
     }
 
     @media (max-width: 400px){
-        padding: 2rem 1rem;
+        padding: 5rem 1rem;
     }
 
     @media (max-width: 1120px){
