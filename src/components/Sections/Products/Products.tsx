@@ -19,8 +19,8 @@ export function Products() {
                 </Header>
                 <Grid>
                     {
-                        products.map(product =>
-                            <GridItem>
+                        products.map((product, index) =>
+                            <GridItem key={index}>
                                 <img src={product.src} alt={`${product.name}`} />
                                 <header><h4>{product.name}</h4></header>
                                 <section>{product.description}</section>

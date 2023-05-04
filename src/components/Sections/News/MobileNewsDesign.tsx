@@ -24,6 +24,7 @@ export function MobileNewsDesign() {
                     {
                         news.map((newsItem, index) =>
                             <NewsItem
+                                key={index}
                                 className={selectedNew === index ? "selected-new" : ""}
                                 onClick={() => {
                                     setSelectedNew(index)

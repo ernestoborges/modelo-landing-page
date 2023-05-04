@@ -1,10 +1,11 @@
 import styled from "styled-components"
 import { FormComponent } from "./FormComponent"
+import { Map } from "./Map"
 
-import {AiOutlineFacebook, AiOutlineInstagram} from "react-icons/ai"
-import {IoLocationOutline} from "react-icons/io5"
-import {BsTelephone} from "react-icons/bs"
-import {HiOutlineMail} from "react-icons/hi"
+import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai"
+import { IoLocationOutline } from "react-icons/io5"
+import { BsTelephone } from "react-icons/bs"
+import { HiOutlineMail } from "react-icons/hi"
 
 
 export function Contact() {
@@ -53,6 +54,7 @@ export function Contact() {
                 </ContactInfo>
                 <FormComponent />
             </Container>
+            <Map />
         </>
     )
 }
