@@ -86,6 +86,7 @@ export function News() {
 }
 
 const Container = styled.div`
+
     padding: 0 10rem;
     margin-top: 10rem;
     min-height: 100vh;
@@ -99,7 +100,7 @@ const Container = styled.div`
     }
 
     @media (max-width: 400px){
-        padding: 0 1rem;
+        padding: 0 1rem 10rem;
     }
 `
 

@@ -10,9 +10,13 @@ export function Map() {
         libraries
     });
 
-    console.log("key: " + import.meta.env.VITE_REACT_APP_GOOGLEMAPS_API_KEY)
-
     const position = { lat: -20.83792149724476, lng: -40.727963147018954 };
+
+    const label = {
+        text: "Modelo Engenharia",
+        className: "my-custom-class-for-label",
+        color: "#c92a2a"
+    };
 
     return (
         <>
@@ -31,7 +35,16 @@ export function Map() {
                         }}
                         onLoad={(map) => map.panTo(position)}
                     >
-                        <MarkerF position={position} />
+                        <MarkerF
+                            position={position}
+                            title="Modelo Engenharia"
+                            label={label}
+                            icon={{
+                                url: "/images/map/marker.png",
+                                scaledSize: new google.maps.Size(25, 40),
+                                labelOrigin: new google.maps.Point(66, 0)
+                            }}
+                        />
                     </GoogleMap>
 
                 }
@@ -43,4 +56,21 @@ export function Map() {
 const Container = styled.div`
     width: 100%;
     height: 40rem;
+
+    & .my-custom-class-for-label {
+        margin-top: 3.4rem;
+        white-space: normal;
+        width: 9.2rem;
+        text-align: left;
+        padding: 0.4rem 1rem;
+        font-weight: bold;
+        font-size: 1.6rem;
+        border-radius: 0.4rem;
+
+        text-shadow: 
+            1px 0px 0px white,   /* Right shadow */
+            -1px 0px 0px white,  /* Left shadow */
+            0px 1px 0px white,   /* Bottom shadow */
+            0px -1px 0px white;  /* Top shadow */
+    }
 `
