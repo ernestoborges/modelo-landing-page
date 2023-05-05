@@ -1,5 +1,5 @@
 import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai"
-import { BsFacebook, BsInstagram, BsTelephone, BsTwitter } from "react-icons/bs"
+import { BsFacebook, BsInstagram, BsTelephone, BsTwitter, BsWhatsapp } from "react-icons/bs"
 import { HiOutlineMail } from "react-icons/hi"
 import { IoLocationOutline } from "react-icons/io5"
 import styled from "styled-components"
@@ -28,6 +28,9 @@ export function Footer() {
                             </li>
                             <li>
                                 <a><BsTwitter /></a>
+                            </li>
+                            <li>
+                                <a><BsWhatsapp /></a>
                             </li>
                         </ul>
                     </Section>
