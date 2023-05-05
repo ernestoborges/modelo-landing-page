@@ -1,15 +1,16 @@
 import styled from "styled-components"
 
+export const products = [
+    { src: "https://dummyimage.com/300x250/000/fff", name: "Projeto de prevenção e combate à incêndio e pânico", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
+    { src: "https://dummyimage.com/300x250/000/fff", name: "Projetos Elétricos", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
+    { src: "https://dummyimage.com/300x250/000/fff", name: "Serviços Topográficos", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
+    { src: "https://dummyimage.com/300x250/000/fff", name: "Projetos Hidrossanitários", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
+    { src: "https://dummyimage.com/300x250/000/fff", name: "Licenciamento", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
+    { src: "https://dummyimage.com/300x250/000/fff", name: "Exemplo Serviço", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
+]
+
 export function Products() {
 
-    const products = [
-        { src: "https://dummyimage.com/300x250/000/fff", name: "Projeto de prevenção e combate à incêndio e pânico", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
-        { src: "https://dummyimage.com/300x250/000/fff", name: "Projetos Elétricos", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
-        { src: "https://dummyimage.com/300x250/000/fff", name: "Serviços Topográficos", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
-        { src: "https://dummyimage.com/300x250/000/fff", name: "Projetos Hidrossanitários", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
-        { src: "https://dummyimage.com/300x250/000/fff", name: "Licenciamento", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
-        { src: "https://dummyimage.com/300x250/000/fff", name: "Exemplo Serviço", description: "Lorem ipsum dolor sit amet constur adipelit sed do eiusmtempor incid dolore magna aliqu enim ad. minim veniam." },
-    ]
     return (
         <>
             <Container>

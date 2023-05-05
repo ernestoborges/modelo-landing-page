@@ -65,7 +65,7 @@ export function Contact() {
 }
 
 const Container = styled.div`
-    padding: 5rem 0rem;
+    padding: 5rem 0rem 0rem;
 
     background-color: var(--black);
     display: flex;
