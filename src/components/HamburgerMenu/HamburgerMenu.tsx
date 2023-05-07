@@ -116,7 +116,6 @@ const HamburgerButton = styled.button<HamburgerMenuProp>`
             border-radius: 1rem;
 
             transition: background-color 0.3s, transform 0.3s;
-            // transform-origin: 20% 50%;
         }
         
         & > div:nth-child(2){
@@ -128,7 +127,7 @@ const HamburgerButton = styled.button<HamburgerMenuProp>`
         isActive &&
         css`
             & > div {
-                border: 0.1rem solid var(--white);    
+                border: 0.1rem solid transparent;    
                 
                 & > div {
                     background-color: var(--white);
