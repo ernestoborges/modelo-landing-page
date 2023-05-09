@@ -39,6 +39,7 @@ export function DesktopNewsDesign() {
                     {
                         news.map((newsItem, index) =>
                             <NewsItem
+                                key={index}
                                 onClick={() => {
                                     setSelectedNew(news[index])
                                 }}

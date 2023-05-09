@@ -18,6 +18,10 @@ export const navigationListItems = [
         link: "news"
     },
     {
+        name: "Instagram",
+        link: "instagram"
+    },
+    {
         name: "Contato",
         link: "contact"
     },
