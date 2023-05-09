@@ -6,6 +6,7 @@ import { HamburgerMenu } from "./components/HamburgerMenu/HamburgerMenu";
 import { Products } from "./components/Sections/Products/Products";
 import { Contact } from "./components/Sections/Contact/Contact";
 import { News } from "./components/Sections/News/News";
+import { Instagram } from "./components/Sections/Instagram/Instagram";
 
 function App() {
 
@@ -25,6 +26,9 @@ function App() {
         </Section>
         <Section id="news">
           <News />
+        </Section>
+        <Section id="instagram">
+          <Instagram />
         </Section>
         <Section id="contact">
           <Contact />
