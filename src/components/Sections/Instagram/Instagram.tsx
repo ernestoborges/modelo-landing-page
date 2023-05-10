@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { FeedItem } from "./FeedItem"
+import styled from "styled-components"
 
 
 export interface FeedItemValues {
@@ -11,6 +12,7 @@ export interface FeedItemValues {
     caption: string
     like_count: number
     comment_count: number
+    thumbnail_url: string
 }
 
 export function Instagram() {
@@ -20,7 +22,7 @@ export function Instagram() {
     async function getInstagramFeed() {
 
         const token = import.meta.env.VITE_REACT_APP_INSTAGRAM_API_KEY
-        const fields = "media_url,media_type,permalink,caption,like_count,comments_count"
+        const fields = "media_url,media_type,permalink,caption,thumbnail_url"
         const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}`
 
         const { data } = await axios.get(url);
@@ -34,16 +36,53 @@ export function Instagram() {
 
     return (
         <>
-            <h2>Instagram</h2>
-            <ul>
-                {
-                    feedList.map((feedItem, index) =>
-                        <li key={index}>
-                            <FeedItem {...feedItem} />
-                        </li>
-                    )
-                }
-            </ul>
+            <Container>
+                <h2>Instagram</h2>
+                <Grid>
+                    {
+                        feedList.map((feedItem, index) =>
+                            <li key={index}>
+                                <FeedItem {...feedItem} />
+                            </li>
+                        )
+                    }
+                </Grid>
+            </Container>
         </>
     )
 }
+
+const Container = styled.div`
+    padding: 0 10rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @media (max-width: 768px){
+        padding: 0 5rem;
+    }
+
+    @media (max-width: 400px){
+        padding: 0 1rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`
+
+const Grid = styled.ul`
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-auto-rows: 30rem;
+    column-gap: 0.4rem;
+    row-gap: 0.4rem;
+    justify-content: center;
+
+    & > li {
+        align-self: center;
+        justify-self: center;
+    }
+`
