@@ -1,25 +1,44 @@
 import styled from "styled-components"
 import { FeedItemValues } from "./Instagram"
 import { InstagramReels } from "./ReelsIcon"
+import { GalleryIcon } from "./GalleryIcon"
 // import { FaHeart } from "react-icons/fa"
 // import { RiChat3Fill } from "react-icons/ri"
 
 export function FeedItem(props: FeedItemValues) {
 
+    function handleImageSrc() {
+        switch (props.media_type) {
+            case "IMAGE": return props.media_url
+            case "VIDEO": return props.thumbnail_url
+            case "CAROUSEL_ALBUM":
+                return props.children.data[0].media_type === "IMAGE"
+                    ? props.children.data[0].media_url
+                    : props.children.data[0].thumbnail_url
+            default: break;
+        }
+    }
+
+    function handleMediaIcon(){
+        switch(props.media_type){
+            case "VIDEO": return <InstagramReels />
+            case "CAROUSEL_ALBUM": return <GalleryIcon />
+            default: break;
+        }
+    }
+
     return (
         <>
             <Container>
                 <section>
-                    <img src={
-                        props.media_type === "IMAGE"
-                            ? props.media_url
-                            : props.thumbnail_url
-                    } alt="" />
+                    <img src={handleImageSrc()} alt="" />
                     {
-                        props.media_type === "VIDEO" &&
-                        <div className="reels-icon">
-                            <InstagramReels />
-                        </div>
+                        props.media_type !== "IMAGE" &&
+                            <div className="reels-icon">
+                                {
+                                    handleMediaIcon()
+                                }
+                            </div>
                     }
                 </section>
                 <MediaDetails>

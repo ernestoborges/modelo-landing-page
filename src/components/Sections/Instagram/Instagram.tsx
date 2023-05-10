@@ -2,27 +2,43 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { FeedItem } from "./FeedItem"
 import styled from "styled-components"
+import { MediaPopup } from "./MediaPopup"
 
 
 export interface FeedItemValues {
     id: string
-    media_type: "IMAGE" | "VIDEO"
+    media_type: "IMAGE" | "VIDEO" | "CAROUSEL_ALBUM"
     media_url: string
     permalink: string
     caption: string
     like_count: number
     comment_count: number
     thumbnail_url: string
+    children: {
+        data: {
+            media_type: "IMAGE" | "VIDEO"
+            media_url: string
+            thumbnail_url: string
+        }[]
+    }
 }
 
 export function Instagram() {
 
     const [feedList, setFeedList] = useState<FeedItemValues[]>([]);
 
+    const [selectedImage, setSelectedImage] = useState<FeedItemValues>();
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+    function handleImageClick(image: FeedItemValues) {
+        setSelectedImage(image);
+        setIsPopupOpen(true);
+    }
+
     async function getInstagramFeed() {
 
         const token = import.meta.env.VITE_REACT_APP_INSTAGRAM_API_KEY
-        const fields = "media_url,media_type,permalink,caption,thumbnail_url"
+        const fields = "media_url,media_type,permalink,caption,thumbnail_url,children{media_url,thumbnail_url, media_type}"
         const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}`
 
         const { data } = await axios.get(url);
@@ -41,12 +57,18 @@ export function Instagram() {
                 <Grid>
                     {
                         feedList.map((feedItem, index) =>
-                            <li key={index}>
+                            <li key={index}
+                                onClick={() => handleImageClick(feedItem)}
+                            >
                                 <FeedItem {...feedItem} />
                             </li>
                         )
                     }
                 </Grid>
+                {
+                    isPopupOpen &&
+                    <MediaPopup image={selectedImage} setIsPopupOpen={setIsPopupOpen}/>
+                }
             </Container>
         </>
     )
