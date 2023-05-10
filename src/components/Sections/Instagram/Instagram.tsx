@@ -53,18 +53,18 @@ export function Instagram() {
 }
 
 const Container = styled.div`
-    padding: 0 10rem;
+    padding: 0 10rem 10rem;
 
     display: flex;
     flex-direction: column;
     gap: 4rem;
 
     @media (max-width: 768px){
-        padding: 0 5rem;
+        padding: 0 5rem 10rem;
     }
 
     @media (max-width: 400px){
-        padding: 0 1rem;
+        padding: 0 1rem 10rem;
     }
 
     display: flex;

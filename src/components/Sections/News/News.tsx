@@ -87,7 +87,7 @@ export function News() {
 
 const Container = styled.div`
 
-    padding: 0 10rem;
+    padding: 0 10rem 10rem;
     margin-top: 10rem;
     min-height: 100vh;
 
@@ -96,7 +96,7 @@ const Container = styled.div`
     gap: 4rem;
 
     @media (max-width: 768px){
-        padding: 0 5rem;
+        padding: 0 5rem 10rem;
     }
 
     @media (max-width: 400px){
