@@ -6,13 +6,19 @@ import styled, { css } from "styled-components";
 
 interface HamburgerMenuProp {
     isActive?: boolean;
-    onClick?: () => void;
+    onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export function HamburgerMenu() {
 
     const isMenuOpened = useContext(NavigationMenuContext)?.isMenuOpened;
     const setIsMenuOpened = useContext(NavigationMenuContext)?.setIsMenuOpened;
+
+    const handlePopupClick = (event: React.MouseEvent<HTMLDivElement>) => {
+        if (event.target === event.currentTarget) {
+            setIsMenuOpened && setIsMenuOpened(false);
+        }
+    };
 
     return (
         <>
@@ -28,22 +34,27 @@ export function HamburgerMenu() {
             </HamburgerButton>
             <Container
                 isActive={isMenuOpened}
+                onClick={handlePopupClick}
             >
-                <HList>
-                    {
-                        navigationListItems.map((item, index) =>
-                            <HListItem
-                                key={index}
-                            >
-                                <a
-                                    href={`#${item.link}`}
+                <Wrapper>
+
+                    <HList>
+                        {
+                            navigationListItems.map((item, index) =>
+                                <HListItem
+                                    key={index}
                                 >
-                                    {item.name}
-                                </a>
-                            </HListItem>
-                        )
-                    }
-                </HList>
+                                    <a
+                                        href={`#${item.link}`}
+                                        onClick={() => setIsMenuOpened && setIsMenuOpened(false)}
+                                    >
+                                        {item.name}
+                                    </a>
+                                </HListItem>
+                            )
+                        }
+                    </HList>
+                </Wrapper>
             </Container>
         </>
     )
@@ -54,11 +65,11 @@ const Container = styled.section<HamburgerMenuProp>`
   z-index: 99;
   top: -1px;
   right: -100%;
-  width: 30rem;
+  width: 100vw;
   height: 100vh;
-  padding: 6rem 0;
 
-  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: flex-end;
 
   transition: right 0.3s;
 
@@ -68,6 +79,13 @@ const Container = styled.section<HamburgerMenuProp>`
       right: 0;
     `
     }
+`
+
+const Wrapper = styled.div`
+    padding: 6rem 0;
+    background-color: var(--dark-blue);
+    width: 30rem;
+    height: 100%;
 `
 
 const HList = styled.ul`
