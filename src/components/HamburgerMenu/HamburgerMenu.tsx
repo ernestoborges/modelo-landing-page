@@ -51,7 +51,7 @@ export function HamburgerMenu() {
 
 const Container = styled.section<HamburgerMenuProp>`
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   top: -1px;
   right: -100%;
   width: 30rem;
@@ -88,7 +88,7 @@ const HListItem = styled.li`
 
 const HamburgerButton = styled.button<HamburgerMenuProp>`
     position: fixed;
-    z-index: 1000;
+    z-index: 100;
     top: 1rem;
     right: 1rem;
         

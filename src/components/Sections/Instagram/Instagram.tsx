@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { FeedItem } from "./FeedItem"
 import styled from "styled-components"
-import { MediaPopup } from "./MediaPopup"
+import { MediaPopup } from "./MediaPopup/MediaPopup"
 
 
 export interface FeedItemValues {

@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { FeedItemValues } from "./Instagram"
+import { FeedItemValues } from "../Instagram"
+import { GalleryCarousel } from "./GalleryCarousel";
 
 interface PropsValues {
     image: FeedItemValues | undefined
@@ -10,9 +11,23 @@ export function MediaPopup({ image, setIsPopupOpen }: PropsValues) {
 
     const handlePopupClick = (event: React.MouseEvent<HTMLDivElement>) => {
         if (event.target === event.currentTarget) {
-          setIsPopupOpen(false);
+            setIsPopupOpen(false);
         }
-      };
+    };
+
+    function handleMediaDisplay() {
+        switch (image?.media_type) {
+            case "IMAGE": return <img src={image.media_url} alt="Popup image" />
+            case "VIDEO": return (
+                    <video controls>
+                        <source src={image.media_url} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                )
+            case "CAROUSEL_ALBUM": return <GalleryCarousel mediaList={image.children.data} />
+            default: break;
+        }
+    }
 
     return (
         <>
@@ -26,12 +41,7 @@ export function MediaPopup({ image, setIsPopupOpen }: PropsValues) {
                         : <Post>
                             <PostMedia>
                                 {
-                                    image.media_type === "IMAGE"
-                                    ? <img src={image.media_url} alt="Popup image" />
-                                    : <video controls>
-                                        <source src={image.media_url} type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                    </video>
+                                    handleMediaDisplay()
                                 }
                             </PostMedia>
                         </Post>
@@ -66,5 +76,11 @@ const Post = styled.div`
 `
 
 const PostMedia = styled.div`
+    width: 100%;
+    height: 100%;
 
+    & > * {
+        width: 100%;
+        height: 100%;
+    }
 `
