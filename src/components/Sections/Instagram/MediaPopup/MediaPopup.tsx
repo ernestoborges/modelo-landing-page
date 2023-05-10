@@ -22,6 +22,7 @@ export function MediaPopup({ image, setIsPopupOpen }: PropsValues) {
                 <video
                     className="media"
                     controls
+                    autoPlay
                 >
                     <source src={image.media_url} type="video/mp4" />
                     Your browser does not support the video tag.
