@@ -17,13 +17,16 @@ export function MediaPopup({ image, setIsPopupOpen }: PropsValues) {
 
     function handleMediaDisplay() {
         switch (image?.media_type) {
-            case "IMAGE": return <img src={image.media_url} alt="Popup image" />
+            case "IMAGE": return <img className="media" src={image.media_url} alt="Popup image" />
             case "VIDEO": return (
-                    <video controls>
-                        <source src={image.media_url} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                )
+                <video
+                    className="media"
+                    controls
+                >
+                    <source src={image.media_url} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            )
             case "CAROUSEL_ALBUM": return <GalleryCarousel mediaList={image.children.data} />
             default: break;
         }
@@ -61,7 +64,6 @@ const Container = styled.div`
     z-index: 999;
 
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 10rem;
 
     display: flex;
     align-items: center;
@@ -76,11 +78,8 @@ const Post = styled.div`
 `
 
 const PostMedia = styled.div`
-    width: 100%;
-    height: 100%;
-
-    & > * {
+    & .media {
         width: 100%;
-        height: 100%;
+        max-width: 60rem;
     }
 `
