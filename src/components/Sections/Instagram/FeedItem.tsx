@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { FeedItemValues } from "./Instagram"
+import { InstagramReels } from "./ReelsIcon"
 // import { FaHeart } from "react-icons/fa"
 // import { RiChat3Fill } from "react-icons/ri"
 
@@ -14,6 +15,12 @@ export function FeedItem(props: FeedItemValues) {
                             ? props.media_url
                             : props.thumbnail_url
                     } alt="" />
+                    {
+                        props.media_type === "VIDEO" &&
+                        <div className="reels-icon">
+                            <InstagramReels />
+                        </div>
+                    }
                 </section>
                 <MediaDetails>
                     {/* <div className="icons-container">
@@ -49,6 +56,19 @@ const Container = styled.article`
         & > img,
         & > video {
             max-width: 30rem;
+        }
+
+        & .reels-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+
+            & > svg {
+                color: var(--white);
+                display: block;
+                width: 2rem;
+                height: 2rem;
+            }
         }
     }
 
