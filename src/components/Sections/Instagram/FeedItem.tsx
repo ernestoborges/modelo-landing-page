@@ -108,7 +108,7 @@ const MediaDetails = styled.header`
     background-color: rgba( 0, 0, 0, 0);
 
     ${Container}:hover & {
-        background-color: rgba( 0, 0, 0, 0.5);
+        background-color: rgba( 0, 0, 0, 0.8);
     }
 
     & .icons-container {
@@ -142,11 +142,10 @@ const MediaDetails = styled.header`
         color: transparent;
         
         color: transparent;
-        transition: color 0.5s ease-out 0s;
+        transition: color 0.5s;
 
         ${Container}:hover & {
             color: white;
-            transition: color 0s ease-out 0s;
         }
     }
 `

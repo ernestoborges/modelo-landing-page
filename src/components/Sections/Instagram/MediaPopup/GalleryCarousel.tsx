@@ -33,7 +33,7 @@ export function GalleryCarousel({ mediaList }: PropsValues) {
         switch (media.media_type) {
             case "IMAGE": return <img key={index} className="media" src={media.media_url} />
             case "VIDEO": return (
-                <video key={index} className="media" controls autoPlay>
+                <video key={index} className="media" controls autoPlay={index === 0}>
                     <source src={media.media_url} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
