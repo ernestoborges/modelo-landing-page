@@ -1,18 +1,21 @@
 import styled from "styled-components"
 import { NavigationBar } from "./NavigationBar"
 
-export function HeaderContainer({className}: {className: string}) {
+export function HeaderContainer({ className }: { className: string }) {
     return (
         <>
             <Header className={className}>
-                <Logo>
-                    <img src="" alt="" />
-                    <LogoText>
-                        <span>modelo</span>
-                        <span>engenharia</span>
-                    </LogoText>
-                </Logo>
-                <NavigationBar />
+                <Wrapper>
+
+                    <Logo>
+                        <img src="" alt="" />
+                        <LogoText>
+                            <span>modelo</span>
+                            <span>engenharia</span>
+                        </LogoText>
+                    </Logo>
+                    <NavigationBar />
+                </Wrapper>
             </Header>
         </>
     )
@@ -26,15 +29,22 @@ const Header = styled.header`
     left: 0;
     width: 100%;
     min-height: 6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+`
+
+const Wrapper = styled.div`
+    background-color: var(--white);
     font-size: 1.6rem;
-
-    background-color: var(--white);     
-
+    width: 100%;
+    max-width: 1440px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 1.5rem;
-
 `
 
 const Logo = styled.div`

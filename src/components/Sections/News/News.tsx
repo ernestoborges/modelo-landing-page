@@ -89,7 +89,6 @@ const Container = styled.div`
 
     padding: 0 10rem 10rem;
     margin-top: 10rem;
-    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
