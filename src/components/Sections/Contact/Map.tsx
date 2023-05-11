@@ -18,6 +18,11 @@ export function Map() {
         color: "#c92a2a"
     };
 
+    const externalLinks = {
+        googleMaps: `https://www.google.com/maps/search/?api=1&query=${position.lat},${position.lng}`,
+        waze: `https://www.waze.com/ul?ll=${position.lat},${position.lng}&navigate=yes`
+    }
+
     return (
         <>
             <Container>
@@ -48,10 +53,16 @@ export function Map() {
                             />
                         </GoogleMap>
                         <ButtonsContainer>
-                            <GoogleMapsRedirect>
+                            <GoogleMapsRedirect
+                                href={externalLinks.googleMaps}
+                                target="_blank"
+                            >
                                 Google Maps
                             </GoogleMapsRedirect>
-                            <WazeRedirect>
+                            <WazeRedirect
+                                href={externalLinks.waze}
+                                target="_blank"
+                            >
                                 Waze
                             </WazeRedirect>
                         </ButtonsContainer>
@@ -96,7 +107,7 @@ const ButtonsContainer = styled.div`
 
 `
 
-const Button = styled.button`
+const Button = styled.a`
     width: 100%;
     padding: 1rem 2rem; 
     border: 0;
@@ -105,6 +116,9 @@ const Button = styled.button`
     border: 0.1rem solid transparent;
     border-radius: 0.4rem;
     cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+
     transition: background-color 0.3s, color 0.3s, border 0.3s;
     
 
