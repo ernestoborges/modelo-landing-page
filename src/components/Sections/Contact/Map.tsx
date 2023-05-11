@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { useLoadScript, GoogleMap, MarkerF } from '@react-google-maps/api';
+import { IoNavigate } from "react-icons/io5";
 
 const libraries: ["places" | "drawing" | "geometry" | "localContext" | "visualization"] = ['places'];
 
@@ -57,13 +58,19 @@ export function Map() {
                                 href={externalLinks.googleMaps}
                                 target="_blank"
                             >
-                                Google Maps
+                                <IoNavigate />
+                                <span>
+                                    Google Maps
+                                </span>
                             </GoogleMapsRedirect>
                             <WazeRedirect
                                 href={externalLinks.waze}
                                 target="_blank"
                             >
-                                Waze
+                                <IoNavigate />
+                                <span>
+                                    Waze
+                                </span>
                             </WazeRedirect>
                         </ButtonsContainer>
                     </>
@@ -109,7 +116,7 @@ const ButtonsContainer = styled.div`
 
 const Button = styled.a`
     width: 100%;
-    padding: 1rem 2rem; 
+    padding: 1rem 1rem; 
     border: 0;
     background-color: var(--black);
     color: var(--white);
@@ -121,11 +128,20 @@ const Button = styled.a`
 
     transition: background-color 0.3s, color 0.3s, border 0.3s;
     
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 
     &:hover {
         background-color: var(--white);
         color: var(--black);
         border: 0.1rem solid var(--black);
+    }
+
+    & > span {
+        flex-grow: 1;
+        border-left: 0.1rem solid var(--white);
+        padding-left: 1rem;
     }
 `
 
