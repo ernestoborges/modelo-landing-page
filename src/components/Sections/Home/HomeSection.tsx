@@ -41,6 +41,7 @@ export function HomeSection() {
 
 const Container = styled.div`
     margin-top: 6rem;
+    margin-bottom: 10rem;
 `
 
 const Carousel = styled(Slider)`
@@ -81,9 +82,11 @@ const Carousel = styled(Slider)`
 `
 
 const CarouselItem = styled.div`
+    width: 100%;
 
     & > img {
         width: 100%;
+        height: 100%;
         max-height: calc(100vh - 60px);
         object-fit: cover;
         object-position: top;
