@@ -28,19 +28,17 @@ const Header = styled.header`
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 6rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
 `
-
 const Wrapper = styled.div`
     background-color: var(--white);
     font-size: 1.6rem;
     width: 100%;
     max-width: 1440px;
+    min-height: 6rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
